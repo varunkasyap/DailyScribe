@@ -17,7 +17,18 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-let posts = [];
+
+let posts = [
+  {
+    title: "Mindfulness in the Digital Age",
+    content: "In the digital age, where screens vie for our attention, mindfulness has become a crucial tool for reclaiming mental clarity. It's about intentionally directing our focus to the present moment, amidst the constant buzz of notifications and distractions. Mindfulness offers a sanctuary from the digital deluge, allowing us to cultivate awareness of our thoughts, feelings, and surroundings. By practicing mindfulness, we can find refuge from the digital noise and nurture a deeper connection with ourselves and the world around us. It's a timeless practice that's more relevant than ever in our fast-paced, technology-driven society."
+  },
+  {
+    title: "The Future of Renewable Energy",
+    content: "The future of renewable energy is bright, promising a sustainable and cleaner world. Innovations in solar, wind, hydro, and other renewable technologies are rapidly advancing, making them more efficient and affordable. With increasing awareness of climate change and environmental concerns, there's growing momentum to transition away from fossil fuels towards renewable sources. Government policies and investments are driving this shift, fostering a conducive environment for renewable energy adoption. As we embrace these technologies, we pave the way for a greener future, reducing carbon emissions and mitigating the impacts of climate change."
+  },
+];
+
 
 app.get("/", function(req, res){
   res.render("home", {
